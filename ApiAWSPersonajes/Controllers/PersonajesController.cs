@@ -23,9 +23,9 @@ namespace ApiAWSPersonajes.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreatePersonaje(string nombre, string imagen)
+        public async Task<ActionResult> CreatePersonaje(Personaje p)
         {
-            await this.repo.CreatePersonajeAsync(nombre, imagen);
+            await this.repo.CreatePersonajeAsync(p.Nombre, p.Imagen);
             return Ok();
         }
     }
